@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex flex-col items-center bg-gray-700 min-h-screen p-4">
+
+  <!-- Information Component -->
+  <div class="flex flex-col space-y-4 text-white">
+    <h1 class="text-4xl font-bold text-center text-gray-100 md:text-5xl">Text Classification</h1>
+    <div>
+      <h2 class="text-xl text-center font-semibold text-gray-200 md:text-2xl mt-2">Classifying Hate Speech and Offensive Language</h2>
+      <p class="text-lg text-gray-200 mt-2">
+        This model employs advanced machine learning techniques to detect and categorize hate speech and offensive language, enhancing the quality of online communication.
+      </p>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="bg-gray-800 mt-5 shadow-lg rounded-lg w-full max-w-xl mx-auto overflow-hidden">
+    <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
+      <h2 class="text-2xl font-bold">Chat Room</h2>
+      <span id="online-users" class="text-sm opacity-70">Online Users: 0</span>
+    </div>
+    
+    <div id="messages" class="p-4 text-black overflow-y-auto h-80 space-y-2">
+      <!-- Messages will appear here -->
+    </div>
+    
+    <form id="chat-form" class="p-4 bg-gray-900 flex space-x-2">
+      <input type="text" id="message-input" placeholder="Type a message..." class="flex-1 p-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-1 focus:ring-blue-600" autocomplete="off" required>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Send</button>
+    </form>
+  </div>
+  <div class="flex justify-center mt-8">
+    <button id="checkoutBtn" class="button">Go Back</button>
+</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
